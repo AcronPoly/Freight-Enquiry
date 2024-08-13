@@ -102,7 +102,12 @@
         <div class="header">Polystox</div>
         <div class="sub-header">Redefining Polymers</div>
         <div class="section-title">:Freight Enquiry:</div>
-        
+
+	<div class="form-group">
+            <label>Date</label>
+            <span>13-08-2024</span>
+        </div>
+	    
         <div class="form-group">
             <label>Order no.</label>
             <span>42482</span>
@@ -143,7 +148,8 @@
 		<Label for="Freight" style="color:white"> Freight (per ton)</label>
 		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
  <!-- Hidden fields to send predefined data -->
-            <input type="hidden" id="Ordername" name="Order no" value="42481">
+            <input type="hidden" id="Date" name="Date" value="13-08-2024">
+	    <input type="hidden" id="Ordername" name="Order no" value="42481">
             <input type="hidden" id="Pick up Form" name="Pick up From" value="Sampat Form House Ext, Goyal Nagar, Indore, Indore, Madhya Pradesh, 452001">
             <input type="hidden" id="Delivered To" name="Delivered To" value="SECTOR-D INDUSTRIAL AREA,SANWER ROAD,INDORE,Indore,Madhya Pradesh,452015">
             <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
@@ -154,7 +160,7 @@
 
  <script>
         const scriptURL=
-	'https://script.google.com/macros/s/AKfycbwr3XB82g-WCxWwNlFR0WWSanlni5mnO2kuRExoXeQ5z52EtWCDMOumKriKIVV_gTeDeg/exec'
+	'https://script.google.com/macros/s/AKfycbzdpCJI3pUc9QQj_X782q2HCk4uiS0cZ27D_Yfo7Lx3tzMMz3w7lhyMJWT9knVN3TliBg/exec'
 	const form=document.forms['google-sheet']
 <!--https://script.google.com/macros/s/AKfycbxCGGwag7REaErqPVwvkK_zXmDU4qLKpTvD2oVIF-_mMCLENLTWyy8b3V0V84NzFlHkTA/exec-->
 	form.addEventListener('submit',e=> {
