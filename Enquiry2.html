@@ -149,15 +149,37 @@
 	<form method="POST" name="google-sheet">
 		<Label for="Transporter" style="color:white"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
+		
 		<Label for="Freight" style="color:white"> Freight (per ton)</label>
 		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px; margin-bottom:6px;" required>
+		
  <!-- Hidden fields to send predefined data -->
-            <input type="hidden" id="Date" name="Date" value="13-08-2024">
-	    <input type="hidden" id="Ordername" name="Order no" value="42481">
-            <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore 452001">
-            <input type="hidden" id="Delivered To" name="Delivered To" value="Bhiwandi 421302">
-            <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
-            <input type="hidden" id="Product" name="Product" value="PVC Resin">
+                <input type="hidden" id="Date" name="Date" value="13-08-2024">
+	        <input type="hidden" id="Ordername" name="Order no" value="42481">
+                <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore 452001">
+                <input type="hidden" id="Delivered To" name="Delivered To" value="Bhiwandi 421302">
+                <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
+                <input type="hidden" id="Product" name="Product" value="PVC Resin">
+<!-- Drop Down Field -->
+		<label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" required>
+                		<option value="" disabled selected>Select a Vehicle Type</option>
+                		<option value="Closed Body 20 Ft. (Sxl) (7.5)Ton"> Closed Body 20 Ft. (Sxl) (7.5)Ton </option>
+                		<option value="Closed Body 20 Ft. (Mxl) (16)Ton"> Closed Body 20 Ft. (Mxl) (16)Ton </option>
+                		<option value="Closed Body 24 Ft. (Sxl)  (7.5)Ton"> Closed Body 24 Ft. (Sxl)  (7.5)Ton </option>
+				<option value="Closed Body 24 Ft. (Mxl) (16)Ton"> Closed Body 24 Ft. (Mxl) (16)Ton </option>
+				<option value="Closed Body 32 Ft. (Sxl) (7.5)Ton"> Closed Body 32 Ft. (Sxl) (7.5)Ton </option>
+				<option value="Closed Body 32 Ft. (Mxl) (16)Ton"> Closed Body 32 Ft. (Mxl) (16)Ton </option>
+				<option value="Open Body 22 Ft. 10 Wheeler (16/20)Ton"> Open Body 22 Ft. 10 Wheeler (16/20)Ton </option>
+				<option value="Open Body 24 Ft. 12 Wheeler (20/25)Ton"> Open Body 24 Ft. 12 Wheeler (20/25)Ton </option>
+				<option value="Open Body 27 Ft. 14 Wheeler (25/31)Ton"> Open Body 27 Ft. 14 Wheeler (25/31)Ton </option>
+				<option value="Open Body 32 Ft. 14 Wheeler (21/31)Ton"> Open Body 32 Ft. 14 Wheeler (21/31)Ton </option>
+				<option value="Open Body 40 Ft. 14 Wheeler (28/31)Ton"> Open Body 40 Ft. 14 Wheeler (28/31)Ton </option>
+				<option value="Open Body 14 Ft. Eicher (3.5/4)Ton"> Open Body 14 Ft. Eicher (3.5/4)Ton </option>
+ 				<option value="Open Body 17 Ft. Eicher (5.5/6.5)Ton"> Open Body 17 Ft. Eicher (5.5/6.5)Ton </option>
+                		<option value="Open Body 19 Ft. Eicher (7.5/10)Ton"> Open Body 19 Ft. Eicher (7.5/10)Ton </option>
+            		</select>
+		
 		<input type="Submit" style="font-weight: Bold; border-radius:7px; padding:2px; width:120px; height:20px value="Submit" name="Submit">
 
     </div>
