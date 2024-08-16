@@ -86,12 +86,16 @@
         }
         .form-group .submit-btn:hover {
             background-color: #004080;
+		
         }
         .quote-title {
             font-size: 16px;
             margin-bottom: 10px;
             font-weight: bold;
             color: #ffffff;
+        }
+ 	.hidden {
+            display: none;
         }
 
 
@@ -102,25 +106,30 @@
         <div class="header">Polystox</div>
         <div class="sub-header">Redefining Polymers</div>
         <div class="section-title">:Freight Enquiry:</div>
-        
+
+	<div class="form-group">
+            <label>Date</label>
+            <span>16-08-2024</span>
+        </div>
+	    
         <div class="form-group">
             <label>Order no.</label>
-            <span>42482</span>
+            <span>002</span>
         </div>
         
         <div class="form-group">
             <label>Pick-up From</label>
-            <span>Plot No-156, 3rd Floor, Deepali, Pitampura Delhi North West DL 110034</span>
+            <span>MUNDRA</span>
         </div>
         
         <div class="form-group">
             <label>Delivered To</label>
-            <span>PLOT NO . 69 - B, SECTOR - B, INDUSTRIAL AREA SIRGITTI, BILASPUR, Chhattisgarh, 495001</span>
+            <span>RAJKOT</span>
         </div>
         
         <div class="form-group">
             <label>Quantity (MT)</label>
-            <span>35 MT</span>
+            <span>10 MT</span>
         </div>
         
         <div class="form-group">
@@ -130,9 +139,12 @@
         
         <div class="terms">
             <strong>Terms:</strong><br>
-            1. Best Quote.<br>
-            2. Ready Truck.<br>
-            3. No Part Load.
+		1.Best Quote.&nbsp;
+		2.Ready Truck.&nbsp;
+		3.No Part Load.<br>
+		4.No Haulting/Height Charges.<br>
+		5.Damage/Loss on Transporter.&nbsp;
+		6.Proper Material Covering.
         </div>
         
         <div class="quote-title">Quote Freight (per ton)</div>
@@ -140,30 +152,106 @@
 	<form method="POST" name="google-sheet">
 		<Label for="Transporter" style="color:white"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
+
 		<Label for="Freight" style="color:white"> Freight (per ton)</label>
 		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
+
+                <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required>
+                		<option value="" disabled selected>Select a Vehicle Type</option>
+
+                		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
+
+                		<option value="Closed Body 20 Ft. (Mxl)"> Closed Body 20 Ft. (Mxl) </option>
+
+                		<option value="Closed Body 24 Ft. (Sxl)"> Closed Body 24 Ft. (Sxl) </option>
+
+				<option value="Closed Body 24 Ft. (Mxl)"> Closed Body 24 Ft. (Mxl) </option>
+
+				<option value="Closed Body 32 Ft. (Sxl)"> Closed Body 32 Ft. (Sxl) </option>
+
+				<option value="Closed Body 32 Ft. (Mxl)"> Closed Body 32 Ft. (Mxl) </option>
+
+				<option value="Open Body 22 Ft. 10 Wheeler"> Open Body 22 Ft. 10 Wheeler </option>
+
+				<option value="Open Body 24 Ft. 12 Wheeler"> Open Body 24 Ft. 12 Wheeler </option>
+
+				<option value="Open Body 27 Ft. 14 Wheeler"> Open Body 27 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 32 Ft. 14 Wheeler"> Open Body 32 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 40 Ft. 14 Wheeler"> Open Body 40 Ft. 14 Wheeler</option>
+
+				<option value="Open Body 14 Ft. Eicher"> Open Body 14 Ft. Eicher </option>
+ 
+				<option value="Open Body 17 Ft. Eicher"> Open Body 17 Ft. Eicher </option>
+
+                		<option value="Open Body 19 Ft. Eicher"> Open Body 19 Ft. Eicher </option>
+
+				<option value="addNew">Add new option...</option>
+            		</select>
+
+		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
+		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
+
+ <!-- Comment Box for "Others" Option -->
+   	  <div id="otherComment" class="form-group hidden">
+                <label for="Other Comment" style="color:white">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+            </div>
+
  <!-- Hidden fields to send predefined data -->
-            <input type="hidden" id="Ordername" name="Order no" value="42481">
-            <input type="hidden" id="Pick up Form" name="Pick up From" value="Plot No-156, 3rd Floor, Deepali, Pitampura Delhi North West DL 110034">
-            <input type="hidden" id="Delivered To" name="Delivered To" value="PLOT NO . 69 - B, SECTOR - B, INDUSTRIAL AREA SIRGITTI, BILASPUR, Chhattisgarh, 495001">
-            <input type="hidden" id="Quantity" name="Quantity MT" value="35 MT">
+	    <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="002">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="MUNDRA">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="RAJKOT">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="10 MT">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
-		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
+		
+		<input type="Submit" style="width:120px; border-radius: 5px; height:20px value="Submit" name="Submit">
 
     </div>
 
  <script>
-        const scriptURL=
-	'https://script.google.com/macros/s/AKfycbwr3XB82g-WCxWwNlFR0WWSanlni5mnO2kuRExoXeQ5z52EtWCDMOumKriKIVV_gTeDeg/exec'
+   function checkForNewOption() {
+            var vehicleTypeSelect = document.getElementById('Vtype');
+            var selectedValue = vehicleTypeSelect.value;
+
+            if (selectedValue === 'addNew') {
+                var newOption = prompt("Enter new vehicle type:");
+                if (newOption) {
+                    var optionElement = document.createElement('option');
+                    optionElement.text = newOption;
+                    optionElement.value = newOption;
+                    vehicleTypeSelect.add(optionElement, vehicleTypeSelect.length - 2);
+                    vehicleTypeSelect.value = newOption;
+                }
+            }
+        }
+
+  
+	 const scriptURL=
+	'https://script.google.com/macros/s/AKfycbxM_Aqsj9ZOnjAaQSUhZ5Cpg3uRVWIucWiR1z05Ei2j9mJKIkSyrK1HvMqazEp_GUGz7w/exec'
 	const form=document.forms['google-sheet']
 <!--https://script.google.com/macros/s/AKfycbxCGGwag7REaErqPVwvkK_zXmDU4qLKpTvD2oVIF-_mMCLENLTWyy8b3V0V84NzFlHkTA/exec-->
 	form.addEventListener('submit',e=> {
 	  e.preventDefault()
+
+ // Set the current date when the form is submitted in dd-MM-yyyy format
+        const date = new Date();
+        const day = String(date.getDate()).padStart(2, '0');  // Ensure 2 digits for day
+        const month = String(date.getMonth() + 1).padStart(2, '0');  // Ensure 2 digits for month
+        const year = date.getFullYear();
+        const formattedDate = `${day}-${month}-${year}`;  // Format as dd-MM-yyyy
+        document.getElementById('currentDate').value = formattedDate;
+		
 	  fetch(scriptURL, { method: 'POST',body: new FormData(form) })
 	  .then(response => alert("Thankyou"))
 	  .catch(error=> console.error('Error!', error.message))
 
-	form.reset();})
+	form.reset();
+	<!-- toggleOtherField(); -->  // Reset the "Other Comment" field visibility
+        });
 
 </script>  
 
