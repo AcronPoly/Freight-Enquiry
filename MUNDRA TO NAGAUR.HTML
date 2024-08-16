@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polystox Freight Enquiry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-size: auto;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            background-image: url('https://img.freepik.com/free-vector/abstract-classic-blue-screensaver_23-2148421853.jpg?ga=GA1.1.726089188.1722603172&semt=ais_hybrid');
+	    width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sub-header {
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #ffffff;
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .form-group {
+            display: flex;
+   	    justify-content: space-between;
+   	    align-items: center;
+   	    margin-bottom: 15px;
+   	    text-align: left;
+   	    flex-wrap: wrap;
+        }
+        .form-group label {
+            color: #ffffff;
+    	    font-weight: bold;
+    	    width: 40%;
+        }
+        .form-group label::after {
+            content: ":";
+            margin-left: 5px;
+        }
+        .form-group span {
+            color: #ffffff;
+   	    width: 60%; /* Set width for span */
+   	    display: block; /* Ensures the span starts on a new line */
+  	    word-wrap: break-word;
+	    font-size: small;
+    	    font-family: inherit;
+        }
+        .terms {
+            text-align: left;
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056a3;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group .submit-btn:hover {
+            background-color: #004080;
+		
+        }
+        .quote-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+ 	.hidden {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Polystox</div>
+        <div class="sub-header">Redefining Polymers</div>
+        <div class="section-title">:Freight Enquiry:</div>
+
+	<div class="form-group">
+            <label>Date</label>
+            <span>16-08-2024</span>
+        </div>
+	    
+        <div class="form-group">
+            <label>Order no.</label>
+            <span>001</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Pick-up From</label>
+            <span>MUNDRA, 370421</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Delivered To</label>
+            <span>NAGAUR, 341001</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Quantity (MT)</label>
+            <span>25 MT</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Product</label>
+            <span>PVC Resin</span>
+        </div>
+        
+        <div class="terms">
+            <strong>Terms:</strong><br>
+		1.Best Quote.&nbsp;
+		2.Ready Truck.&nbsp;
+		3.No Part Load.<br>
+		4.No Haulting/Height Charges.<br>
+		5.Damage/Loss on Transporter.&nbsp;
+		6.Proper Material Covering.
+        </div>
+        
+        <div class="quote-title">Quote Freight (per ton)</div>
+       <div>
+	<form method="POST" name="google-sheet">
+		<Label for="Transporter" style="color:white"> Transporter </label>
+		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
+
+		<Label for="Freight" style="color:white"> Freight (per ton)</label>
+		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
+
+                <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required>
+                		<option value="" disabled selected>Select a Vehicle Type</option>
+
+                		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
+
+                		<option value="Closed Body 20 Ft. (Mxl)"> Closed Body 20 Ft. (Mxl) </option>
+
+                		<option value="Closed Body 24 Ft. (Sxl)"> Closed Body 24 Ft. (Sxl) </option>
+
+				<option value="Closed Body 24 Ft. (Mxl)"> Closed Body 24 Ft. (Mxl) </option>
+
+				<option value="Closed Body 32 Ft. (Sxl)"> Closed Body 32 Ft. (Sxl) </option>
+
+				<option value="Closed Body 32 Ft. (Mxl)"> Closed Body 32 Ft. (Mxl) </option>
+
+				<option value="Open Body 22 Ft. 10 Wheeler"> Open Body 22 Ft. 10 Wheeler </option>
+
+				<option value="Open Body 24 Ft. 12 Wheeler"> Open Body 24 Ft. 12 Wheeler </option>
+
+				<option value="Open Body 27 Ft. 14 Wheeler"> Open Body 27 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 32 Ft. 14 Wheeler"> Open Body 32 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 40 Ft. 14 Wheeler"> Open Body 40 Ft. 14 Wheeler</option>
+
+				<option value="Open Body 14 Ft. Eicher"> Open Body 14 Ft. Eicher </option>
+ 
+				<option value="Open Body 17 Ft. Eicher"> Open Body 17 Ft. Eicher </option>
+
+                		<option value="Open Body 19 Ft. Eicher"> Open Body 19 Ft. Eicher </option>
+
+				<option value="addNew">Add new option...</option>
+            		</select>
+
+		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
+		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
+
+ <!-- Comment Box for "Others" Option -->
+   	  <div id="otherComment" class="form-group hidden">
+                <label for="Other Comment" style="color:white">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+            </div>
+
+ <!-- Hidden fields to send predefined data -->
+	    <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="001">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value=" MUNDRA, 370421">
+            <input type="hidden" id="Delivered To" name="Delivered To" value=" NAGAUR, 341001">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="25 MT">
+            <input type="hidden" id="Product" name="Product" value="PVC Resin">
+		
+		<input type="Submit" style="width:120px; border-radius: 5px; height:20px value="Submit" name="Submit">
+
+    </div>
+
+ <script>
+   function checkForNewOption() {
+            var vehicleTypeSelect = document.getElementById('Vtype');
+            var selectedValue = vehicleTypeSelect.value;
+
+            if (selectedValue === 'addNew') {
+                var newOption = prompt("Enter new vehicle type:");
+                if (newOption) {
+                    var optionElement = document.createElement('option');
+                    optionElement.text = newOption;
+                    optionElement.value = newOption;
+                    vehicleTypeSelect.add(optionElement, vehicleTypeSelect.length - 2);
+                    vehicleTypeSelect.value = newOption;
+                }
+            }
+        }
+
+  
+	 const scriptURL=
+	'https://script.google.com/macros/s/AKfycbxM_Aqsj9ZOnjAaQSUhZ5Cpg3uRVWIucWiR1z05Ei2j9mJKIkSyrK1HvMqazEp_GUGz7w/exec'
+	const form=document.forms['google-sheet']
+<!--https://script.google.com/macros/s/AKfycbxCGGwag7REaErqPVwvkK_zXmDU4qLKpTvD2oVIF-_mMCLENLTWyy8b3V0V84NzFlHkTA/exec-->
+	form.addEventListener('submit',e=> {
+	  e.preventDefault()
+
+ // Set the current date when the form is submitted in dd-MM-yyyy format
+        const date = new Date();
+        const day = String(date.getDate()).padStart(2, '0');  // Ensure 2 digits for day
+        const month = String(date.getMonth() + 1).padStart(2, '0');  // Ensure 2 digits for month
+        const year = date.getFullYear();
+        const formattedDate = `${day}-${month}-${year}`;  // Format as dd-MM-yyyy
+        document.getElementById('currentDate').value = formattedDate;
+		
+	  fetch(scriptURL, { method: 'POST',body: new FormData(form) })
+	  .then(response => alert("Thankyou"))
+	  .catch(error=> console.error('Error!', error.message))
+
+	form.reset();
+	<!-- toggleOtherField(); -->  // Reset the "Other Comment" field visibility
+        });
+
+</script>  
+
+
+</body>
+</html>
