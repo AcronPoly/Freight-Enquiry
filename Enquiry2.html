@@ -148,25 +148,17 @@
         </div>
         
         <div class="quote-title">Quote Freight (per ton)</div>
+         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
 	<form method="POST" name="google-sheet">
 		<Label for="Transporter" style="color:white"> Transporter </label>
-		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px; margin-bottom:6px;" required><br>
-		
-		<Label for="Freight" style="color:white"> Freight (per ton)</label>
-		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px; margin-bottom:6px;" required><br>
-		
- <!-- Hidden fields to send predefined data -->
-                <input type="hidden" id="currentDate" name="currentDate">
-	        <input type="hidden" id="Ordername" name="Order no" value="42481">
-                <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore 452001">
-                <input type="hidden" id="Delivered To" name="Delivered To" value="Bhiwandi 421302">
-                <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
-                <input type="hidden" id="Product" name="Product" value="PVC Resin">
+		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
 
-<!-- Drop Down Field -->
-		 <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px; onchange="checkForNewOption()" required>
+		<Label for="Freight" style="color:white"> Freight (per ton)</label>
+		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
+
+                <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
                 		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
@@ -199,18 +191,24 @@
 
 				<option value="addNew">Add new option...</option>
             		</select>
-		
-		<Label for="Max. Load Capacity" style="color:white; display:block;"> Max. Load Capacity </label>
-		<input type="text" id="MLoad" name="Max. Load Capacity" placeholder="Enter Max. Load Capacity of vehicle" style="width:288px; margin-bottom:6px;" required>
 
-<!-- Comment Box for "Others" Option -->
-   	 
-	<!-- <div id="otherComment" class="form-group hidden">
-                <label for="Other Comment" style="color:white; font-weight:lighter; margin:auto;">Other Comment</label>
-                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;margin:auto;">
-        </div> -->
-		
-		<input type="Submit" style="font-weight: Bold; border-radius:7px; padding:2px; width:120px; height:20px value="Submit" name="Submit">
+		<Label for="Max. Load Capacity" style="color:white"> Max. Load Capacity </label>
+		<input type="text" id="MLoad" name="Max. Load Capacityr" placeholder="Enter Max. Load Capacity of Vehicle" style="width:288px; display:Block;" required>
+
+ <!-- Comment Box for "Others" Option -->
+   	  <div id="otherComment" class="form-group hidden">
+                <label for="Other Comment" style="color:white">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+            </div>
+
+ <!-- Hidden fields to send predefined data -->
+	    <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="42481">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="Sampat Form House Ext, Goyal Nagar, Indore, Indore, Madhya Pradesh, 452001">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="SECTOR-D INDUSTRIAL AREA,SANWER ROAD,INDORE,Indore,Madhya Pradesh,452015">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
+            <input type="hidden" id="Product" name="Product" value="PVC Resin">
+		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
 
     </div>
 
@@ -230,7 +228,8 @@
                 }
             }
         }
-	  
+
+  
 	 const scriptURL=
 	'https://script.google.com/macros/s/AKfycbwn6r01xJWO2pLdjoIFIoepsAWh-3E_6BU_Bk25dLm-MQujoVril7PDno9vPh1VD5B5Rg/exec'
 	const form=document.forms['google-sheet']
