@@ -165,25 +165,41 @@
                 <input type="hidden" id="Product" name="Product" value="PVC Resin">
 
 <!-- Drop Down Field -->
-		<label for="Vehicle Type" style="color:white"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required><br>
+		 <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px; onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
-                		<option value="Closed Body 20 Ft. (Sxl) (7.5)Ton"> Closed Body 20 Ft. (Sxl)</option>
-                		<option value="Closed Body 20 Ft. (Mxl) (16)Ton"> Closed Body 20 Ft. (Mxl)</option>
-                		<option value="Closed Body 24 Ft. (Sxl)  (7.5)Ton"> Closed Body 24 Ft. (Sxl)</option>
-				<option value="Closed Body 24 Ft. (Mxl) (16)Ton"> Closed Body 24 Ft. (Mxl)</option>
-				<option value="Closed Body 32 Ft. (Sxl) (7.5)Ton"> Closed Body 32 Ft. (Sxl)</option>
-				<option value="Closed Body 32 Ft. (Mxl) (16)Ton"> Closed Body 32 Ft. (Mxl)</option>
-				<option value="Open Body 22 Ft. 10 Wheeler (16/20)Ton"> Open Body 22 Ft. 10 Wheeler</option>
-				<option value="Open Body 24 Ft. 12 Wheeler (20/25)Ton"> Open Body 24 Ft. 12 Wheeler</option>
-				<option value="Open Body 27 Ft. 14 Wheeler (25/31)Ton"> Open Body 27 Ft. 14 Wheeler</option>
-				<option value="Open Body 32 Ft. 14 Wheeler (21/31)Ton"> Open Body 32 Ft. 14 Wheeler</option>
-				<option value="Open Body 40 Ft. 14 Wheeler (28/31)Ton"> Open Body 40 Ft. 14 Wheeler</option>
-				<option value="Open Body 14 Ft. Eicher (3.5/4)Ton"> Open Body 14 Ft. Eicher</option>
- 				<option value="Open Body 17 Ft. Eicher (5.5/6.5)Ton"> Open Body 17 Ft. Eicher</option>
-                		<option value="Open Body 19 Ft. Eicher (7.5/10)Ton"> Open Body 19 Ft. Eicher</option>
+
+                		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
+
+                		<option value="Closed Body 20 Ft. (Mxl)"> Closed Body 20 Ft. (Mxl) </option>
+
+                		<option value="Closed Body 24 Ft. (Sxl)"> Closed Body 24 Ft. (Sxl) </option>
+
+				<option value="Closed Body 24 Ft. (Mxl)"> Closed Body 24 Ft. (Mxl) </option>
+
+				<option value="Closed Body 32 Ft. (Sxl)"> Closed Body 32 Ft. (Sxl) </option>
+
+				<option value="Closed Body 32 Ft. (Mxl)"> Closed Body 32 Ft. (Mxl) </option>
+
+				<option value="Open Body 22 Ft. 10 Wheeler"> Open Body 22 Ft. 10 Wheeler </option>
+
+				<option value="Open Body 24 Ft. 12 Wheeler"> Open Body 24 Ft. 12 Wheeler </option>
+
+				<option value="Open Body 27 Ft. 14 Wheeler"> Open Body 27 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 32 Ft. 14 Wheeler"> Open Body 32 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 40 Ft. 14 Wheeler"> Open Body 40 Ft. 14 Wheeler</option>
+
+				<option value="Open Body 14 Ft. Eicher"> Open Body 14 Ft. Eicher </option>
+ 
+				<option value="Open Body 17 Ft. Eicher"> Open Body 17 Ft. Eicher </option>
+
+                		<option value="Open Body 19 Ft. Eicher"> Open Body 19 Ft. Eicher </option>
+
 				<option value="addNew">Add new option...</option>
             		</select>
+		
 		<Label for="Max. Load Capacity" style="color:white; display:block;"> Max. Load Capacity </label>
 		<input type="text" id="MLoad" name="Max. Load Capacity" placeholder="Enter Max. Load Capacity of vehicle" style="width:288px; margin-bottom:6px;" required>
 
@@ -199,8 +215,7 @@
     </div>
 
  <script>
-// Add new option in Drop Down
-	 function checkForNewOption() {
+   function checkForNewOption() {
             var vehicleTypeSelect = document.getElementById('Vtype');
             var selectedValue = vehicleTypeSelect.value;
 
@@ -215,15 +230,6 @@
                 }
             }
         }
-	   <!-- function toggleOtherField() {
-            var vehicleTypeSelect = document.getElementById('Vtype');
-            var otherCommentDiv = document.getElementById('otherComment');
-            if (vehicleTypeSelect.value === 'Other') {
-                otherCommentDiv.classList.remove('hidden');
-            } else {
-                otherCommentDiv.classList.add('hidden');
-            }
-        } -->
 	  
 	 const scriptURL=
 	'https://script.google.com/macros/s/AKfycbwn6r01xJWO2pLdjoIFIoepsAWh-3E_6BU_Bk25dLm-MQujoVril7PDno9vPh1VD5B5Rg/exec'
