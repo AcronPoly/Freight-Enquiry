@@ -182,7 +182,7 @@
 				<option value="Open Body 14 Ft. Eicher (3.5/4)Ton"> Open Body 14 Ft. Eicher</option>
  				<option value="Open Body 17 Ft. Eicher (5.5/6.5)Ton"> Open Body 17 Ft. Eicher</option>
                 		<option value="Open Body 19 Ft. Eicher (7.5/10)Ton"> Open Body 19 Ft. Eicher</option>
-				<option value="Other"> Other </option>
+				<option value="addNew">Add new option...</option>
             		</select>
 		<Label for="Max. Load Capacity" style="color:white"> Max. Load Capacity </label>
 		<input type="text" id="MLoad" name="Max. Load Capacity" placeholder="Enter Max. Load Capacity of vehicle" style="width:288px; margin-bottom:6px;" required>
@@ -199,7 +199,23 @@
     </div>
 
  <script>
-	    function toggleOtherField() {
+// Add new option in Drop Down
+	 function checkForNewOption() {
+            var vehicleTypeSelect = document.getElementById('Vtype');
+            var selectedValue = vehicleTypeSelect.value;
+
+            if (selectedValue === 'addNew') {
+                var newOption = prompt("Enter new vehicle type:");
+                if (newOption) {
+                    var optionElement = document.createElement('option');
+                    optionElement.text = newOption;
+                    optionElement.value = newOption;
+                    vehicleTypeSelect.add(optionElement, vehicleTypeSelect.length - 2);
+                    vehicleTypeSelect.value = newOption;
+                }
+            }
+        }
+	   <!-- function toggleOtherField() {
             var vehicleTypeSelect = document.getElementById('Vtype');
             var otherCommentDiv = document.getElementById('otherComment');
             if (vehicleTypeSelect.value === 'Other') {
@@ -207,7 +223,7 @@
             } else {
                 otherCommentDiv.classList.add('hidden');
             }
-        }
+        } -->
 	  
 	 const scriptURL=
 	'https://script.google.com/macros/s/AKfycbxsgEuWC1UiSW3U3nrFxUDxuSGuYhIsAfKsP7kDfV3sE7AhZsJ4h58Ywl8xER3AmrbYtg/exec'
@@ -229,7 +245,7 @@
 	  .catch(error=> console.error('Error!', error.message))
 
 	form.reset();
-	toggleOtherField();  // Reset the "Other Comment" field visibility
+	<!-- toggleOtherField(); -->  // Reset the "Other Comment" field visibility
         });
 
 </script>  
