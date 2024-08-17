@@ -86,7 +86,6 @@
         }
         .form-group .submit-btn:hover {
             background-color: #004080;
-		
         }
         .quote-title {
             font-size: 16px;
@@ -94,10 +93,9 @@
             font-weight: bold;
             color: #ffffff;
         }
- 	.hidden {
+ 	 .hidden {
             display: none;
         }
-
 
     </style>
 </head>
@@ -106,12 +104,13 @@
         <div class="header">Polystox</div>
         <div class="sub-header">Redefining Polymers</div>
         <div class="section-title">:Freight Enquiry:</div>
+        
 
 	<div class="form-group">
-            <label>Date</label>
+            <label>Date.</label>
             <span>13-08-2024</span>
         </div>
-	    
+
         <div class="form-group">
             <label>Order no.</label>
             <span>42482</span>
@@ -119,12 +118,12 @@
         
         <div class="form-group">
             <label>Pick-up From</label>
-            <span>Indore 452001</span>
+            <span>Indore, 452001</span>
         </div>
         
         <div class="form-group">
             <label>Delivered To</label>
-            <span>Bhiwandi 421302</span>
+            <span>Indore, 452015</span>
         </div>
         
         <div class="form-group">
@@ -136,7 +135,8 @@
             <label>Product</label>
             <span>PVC Resin</span>
         </div>
-        
+
+      
         <div class="terms">
             <strong>Terms:</strong><br>
 		1.Best Quote.&nbsp;
@@ -149,7 +149,7 @@
         
         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
-	<form method="POST" name="google-sheet">
+	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
 		<Label for="Transporter" style="color:white"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
 
@@ -157,7 +157,7 @@
 		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
 
                 <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
                 		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
@@ -190,18 +190,16 @@
 
 				<option value="addNew">Add new option...</option>
             		</select>
-
 		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
 		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
 
- <!-- Comment Box for "Others" Option -->
+<!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
                 <label for="Other Comment" style="color:white">Other Comment</label>
                 <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
             </div>
-
-		<Label for="Verify Number" style="color:white; margin-bottom:6px; display:block;">Verify Number</label>
-                <input type="number" id="Vnumber" name="Verify Number" placeholder="enter contact number" style="width:288px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+		<Label for="Verify Number" style="color:white; display:block;">Verify Number</label>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="enter contact number" style="width:288px; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
 		
  <!-- Hidden fields to send predefined data -->
 	    <input type="hidden" id="currentDate" name="currentDate">
@@ -210,12 +208,10 @@
             <input type="hidden" id="Delivered To" name="Delivered To" value="Indore, 452015">
             <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
-		
-		<input type="Submit" style="width:120px; border-radius: 5px; height:20px value="Submit" name="Submit">
+		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
 
     </div>
 
- 
  <script>
    function checkForNewOption() {
             var vehicleTypeSelect = document.getElementById('Vtype');
@@ -242,7 +238,7 @@
             return true; // Allow form submission
         }
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzDZLq9xwfv7ckrY-p-HTuOCtHLy77zsI6whjbwleXkREjhYpCfqhDBeRU5CqJykEGXWw/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwXjPphrKONV4sUMP2ZGCeZXeJHmnF6mc-16bD_DxL76B-SaYqLccguM9QjPtyHhXJd7Q/exec';
         const form = document.forms['google-sheet'];
 
        form.addEventListener('submit', e => {
