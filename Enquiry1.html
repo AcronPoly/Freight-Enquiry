@@ -86,7 +86,6 @@
         }
         .form-group .submit-btn:hover {
             background-color: #004080;
-		
         }
         .quote-title {
             font-size: 16px;
@@ -94,10 +93,9 @@
             font-weight: bold;
             color: #ffffff;
         }
- 	.hidden {
+ 	 .hidden {
             display: none;
         }
-
 
     </style>
 </head>
@@ -106,37 +104,39 @@
         <div class="header">Polystox</div>
         <div class="sub-header">Redefining Polymers</div>
         <div class="section-title">:Freight Enquiry:</div>
+        
 
 	<div class="form-group">
-            <label>Date</label>
-            <span>16-08-2024</span>
+            <label>Date.</label>
+            <span>13-08-2024</span>
         </div>
-	    
+
         <div class="form-group">
             <label>Order no.</label>
-            <span>001</span>
+            <span>42482</span>
         </div>
         
         <div class="form-group">
             <label>Pick-up From</label>
-            <span>MUNDRA, 370421</span>
+            <span>Sampat Form House Ext, Goyal Nagar, Indore, Indore, Madhya Pradesh, 452001</span>
         </div>
         
         <div class="form-group">
             <label>Delivered To</label>
-            <span>NAGORE, 341001</span>
+            <span>SECTOR-D INDUSTRIAL AREA,SANWER ROAD,INDORE,Indore,Madhya Pradesh,452015</span>
         </div>
         
         <div class="form-group">
             <label>Quantity (MT)</label>
-            <span>25 MT</span>
+            <span>30 MT</span>
         </div>
         
         <div class="form-group">
             <label>Product</label>
             <span>PVC Resin</span>
         </div>
-        
+
+      
         <div class="terms">
             <strong>Terms:</strong><br>
 		1.Best Quote.&nbsp;
@@ -149,7 +149,7 @@
         
         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
-	<form method="POST" name="google-sheet">
+	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
 		<Label for="Transporter" style="color:white"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="enter Transporter Name" style="width:288px" required>
 
@@ -157,7 +157,7 @@
 		<input type="text" id="freight" name="Freight" placeholder="enter freight amount" style="width:288px" required>
 
                 <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px; margin-bottom:6px;" onchange="checkForNewOption()" required>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
                 		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
@@ -191,24 +191,22 @@
 				<option value="addNew">Add new option...</option>
             		</select>
 
-		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
-		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
-
  <!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
                 <label for="Other Comment" style="color:white">Other Comment</label>
                 <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
             </div>
-
+		<Label for="Verify Number" style="color:white; display:block;">Verify Number</label>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="enter contact number" style="width:288px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+		
  <!-- Hidden fields to send predefined data -->
 	    <input type="hidden" id="currentDate" name="currentDate">
-            <input type="hidden" id="Ordername" name="Order no" value="001">
-            <input type="hidden" id="Pick up Form" name="Pick up From" value="MUNDRA, 370421">
-            <input type="hidden" id="Delivered To" name="Delivered To" value="NAGORE, 341001">
-            <input type="hidden" id="Quantity" name="Quantity MT" value="25 MT">
+            <input type="hidden" id="Ordername" name="Order no" value="42481">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="Sampat Form House Ext, Goyal Nagar, Indore, Indore, Madhya Pradesh, 452001">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="SECTOR-D INDUSTRIAL AREA,SANWER ROAD,INDORE,Indore,Madhya Pradesh,452015">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
-		
-		<input type="Submit" style="width:120px; border-radius: 5px; height:20px value="Submit" name="Submit">
+		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
 
     </div>
 
@@ -229,32 +227,32 @@
             }
         }
 
-  
-	 const scriptURL=
-	'https://script.google.com/macros/s/AKfycbxM_Aqsj9ZOnjAaQSUhZ5Cpg3uRVWIucWiR1z05Ei2j9mJKIkSyrK1HvMqazEp_GUGz7w/exec'
-	const form=document.forms['google-sheet']
-<!--https://script.google.com/macros/s/AKfycbxCGGwag7REaErqPVwvkK_zXmDU4qLKpTvD2oVIF-_mMCLENLTWyy8b3V0V84NzFlHkTA/exec-->
-	form.addEventListener('submit',e=> {
-	  e.preventDefault()
+	function validateNumber() {
+            var number = document.getElementById("Vnumber").value;
+            if (number.length !== 10) {
+                alert("Please enter exactly 10 digits.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
 
- // Set the current date when the form is submitted in dd-MM-yyyy format
-        const date = new Date();
-        const day = String(date.getDate()).padStart(2, '0');  // Ensure 2 digits for day
-        const month = String(date.getMonth() + 1).padStart(2, '0');  // Ensure 2 digits for month
-        const year = date.getFullYear();
-        const formattedDate = `${day}-${month}-${year}`;  // Format as dd-MM-yyyy
-        document.getElementById('currentDate').value = formattedDate;
-		
-	  fetch(scriptURL, { method: 'POST',body: new FormData(form) })
-	  .then(response => alert("Thankyou"))
-	  .catch(error=> console.error('Error!', error.message))
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyE_HYPE3AegwOt_Z5OWaFgvxMzQMvY9EALu15mupJXuA1kwKjGLHaUwaBUjWihxe8L/exec';
+        const form = document.forms['google-sheet'];
 
-	form.reset();
-	<!-- toggleOtherField(); -->  // Reset the "Other Comment" field visibility
-        });
+       form.addEventListener('submit', e => {
+        if (!validateNumber()) {
+            e.preventDefault(); // Prevent form submission
+        } else {
+            e.preventDefault(); // Prevent the default form submission
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thank you"))
+                .catch(error => console.error('Error!', error.message));
 
-</script>  
-
+            form.reset();
+            // Reset the "Other Comment" field visibility if necessary
+        }
+    });
+    </script>
 
 </body>
 </html>
