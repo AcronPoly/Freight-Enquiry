@@ -200,6 +200,9 @@
                 <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
             </div>
 
+		<Label for="Verify Number" style="color:white; display:block;">Verify Number</label>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="enter contact number" style="width:288px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+		
  <!-- Hidden fields to send predefined data -->
 	    <input type="hidden" id="currentDate" name="currentDate">
             <input type="hidden" id="Ordername" name="Order no" value="42481">
@@ -212,6 +215,7 @@
 
     </div>
 
+ 
  <script>
    function checkForNewOption() {
             var vehicleTypeSelect = document.getElementById('Vtype');
@@ -229,32 +233,32 @@
             }
         }
 
-  
-	 const scriptURL=
-	'https://script.google.com/macros/s/AKfycbxM_Aqsj9ZOnjAaQSUhZ5Cpg3uRVWIucWiR1z05Ei2j9mJKIkSyrK1HvMqazEp_GUGz7w/exec'
-	const form=document.forms['google-sheet']
-<!--https://script.google.com/macros/s/AKfycbxCGGwag7REaErqPVwvkK_zXmDU4qLKpTvD2oVIF-_mMCLENLTWyy8b3V0V84NzFlHkTA/exec-->
-	form.addEventListener('submit',e=> {
-	  e.preventDefault()
+	function validateNumber() {
+            var number = document.getElementById("Vnumber").value;
+            if (number.length !== 10) {
+                alert("Please enter exactly 10 digits.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
 
- // Set the current date when the form is submitted in dd-MM-yyyy format
-        const date = new Date();
-        const day = String(date.getDate()).padStart(2, '0');  // Ensure 2 digits for day
-        const month = String(date.getMonth() + 1).padStart(2, '0');  // Ensure 2 digits for month
-        const year = date.getFullYear();
-        const formattedDate = `${day}-${month}-${year}`;  // Format as dd-MM-yyyy
-        document.getElementById('currentDate').value = formattedDate;
-		
-	  fetch(scriptURL, { method: 'POST',body: new FormData(form) })
-	  .then(response => alert("Thankyou"))
-	  .catch(error=> console.error('Error!', error.message))
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyE_HYPE3AegwOt_Z5OWaFgvxMzQMvY9EALu15mupJXuA1kwKjGLHaUwaBUjWihxe8L/exec';
+        const form = document.forms['google-sheet'];
 
-	form.reset();
-	<!-- toggleOtherField(); -->  // Reset the "Other Comment" field visibility
-        });
+       form.addEventListener('submit', e => {
+        if (!validateNumber()) {
+            e.preventDefault(); // Prevent form submission
+        } else {
+            e.preventDefault(); // Prevent the default form submission
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thank you"))
+                .catch(error => console.error('Error!', error.message));
 
-</script>  
-
+            form.reset();
+            // Reset the "Other Comment" field visibility if necessary
+        }
+    });
+    </script>
 
 </body>
 </html>
