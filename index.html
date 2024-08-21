@@ -29,18 +29,18 @@
             text-align: center;
         }
         .header {
-            color: #ffffff;
+            color: #00008B;
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 5px;
         }
         .sub-header {
-            color: #ffffff;
+            color:#00008B;
             font-size: 14px;
             margin-bottom: 20px;
         }
         .section-title {
-            color: #ffffff;
+            color: #00008B;
             font-size: 18px;
             margin: 20px 0;
             font-weight: bold;
@@ -54,7 +54,7 @@
    	    flex-wrap: wrap;
         }
         .form-group label {
-            color: #ffffff;
+            color: #00008B;
     	    font-weight: bold;
     	    width: 40%;
         }
@@ -63,7 +63,7 @@
             margin-left: 5px;
         }
         .form-group span {
-            color: #ffffff;
+            color: #00008B;
    	    width: 60%; /* Set width for span */
    	    display: block; /* Ensures the span starts on a new line */
   	    word-wrap: break-word;
@@ -72,7 +72,7 @@
         }
         .terms {
             text-align: left;
-            color: #ffffff;
+            color: #00008B;
             font-size: 14px;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -81,7 +81,7 @@
             width: 100%;
             padding: 10px;
             background-color: #0056a3;
-            color: #ffffff;
+            color: #00008B;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -94,7 +94,7 @@
             font-size: 16px;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #ffffff;
+            color: #00008B;
         }
  	 .hidden {
             display: none;
@@ -156,10 +156,10 @@
 		<Label for="Transporter" style="color:white"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px" required>
 
-		<Label for="Freight" style="color:white"> Freight (per ton)</label>
+		<Label for="Freight" style="color:#00008B"> Freight (per ton)</label>
 		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px" required>
 
-                <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
+                <label for="Vehicle Type" style="color:#00008B"> Vehicle Type </label>
             		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
@@ -193,15 +193,15 @@
 
 				<option value="addNew">Add new option...</option>
             		</select>
-		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
+		<Label for="Min. Load Guarantee" style="color:#00008B; display:block;"> Min. Load Guarantee </label>
 		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
 
 <!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
-                <label for="Other Comment" style="color:white">Other Comment</label>
+                <label for="Other Comment" style="color:#00008B">Other Comment</label>
                 <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
             </div>
-		<Label for="Verify Number" style="color:white; display:block;">Verify Mobile Number</label>
+		<Label for="Verify Number" style="color:#00008B; display:block;">Verify Mobile Number</label>
                 <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
 		
  <!-- Hidden fields to send predefined data -->
