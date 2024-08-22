@@ -170,13 +170,13 @@
         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
 	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
-		<Label for="Transporter" style="color:#00008B"> Transporter </label>
+		<Label for="Transporter" style="color:#00008B; display:block;"> Transporter </label>
 		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px" required>
 
-		<Label for="Freight" style="color:#00008B"> Freight (per ton)</label>
+		<Label for="Freight" style="color:#00008B; display:block;"> Freight (per ton)</label>
 		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px" required>
 
-                <label for="Vehicle Type" style="color:#00008B"> Vehicle Type </label>
+                <label for="Vehicle Type" style="color:#00008B; display:block;"> Vehicle Type </label>
             		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
@@ -215,7 +215,7 @@
 
 <!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
-                <label for="Other Comment" style="color:#00008B">Other Comment</label>
+                <label for="Other Comment" style="color:#00008B; display:block;">Other Comment</label>
                 <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
             </div>
 		<Label for="Verify Number" style="color:#00008B; display:block;">Verify Mobile Number</label>
