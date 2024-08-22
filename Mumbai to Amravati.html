@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polystox Freight Enquiry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            background-image: url('https://raw.githubusercontent.com/AcronPoly/Freight-Enquiry/main/BGIMAGE2.png');
+	    background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the background image */
+    	    background-repeat: no-repeat; /* Prevents the image from repeating */
+	    width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            color: #191970;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sub-header {
+            color:#191970;
+            font-size: 14px;
+            margin-bottom: 20px;
+	    FONT-WEIGHT: BOLD;
+        }
+        .section-title {
+            color: #191970;
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .form-group {
+            display: flex;
+   	    justify-content: space-between;
+   	    align-items: center;
+   	    margin-bottom: 15px;
+   	    text-align: left;
+   	    flex-wrap: wrap;
+	    FONT-WEIGHT: BOLD;
+        }
+        .form-group label {
+            color: #191970;
+    	    font-weight: bold;
+    	    width: 40%;
+	    FONT-WEIGHT: BOLD;
+        }
+        .form-group label::after {
+            content: ":";
+            margin-left: 5px;
+	    FONT-WEIGHT: BOLD;
+        }
+        .form-group span {
+            color: #191970;
+   	    width: 60%; /* Set width for span */
+   	    display: block; /* Ensures the span starts on a new line */
+  	    word-wrap: break-word;
+	    font-size: small;
+    	    font-family: inherit;
+            FONT-WEIGHT: BOLD;
+        }
+        .terms {
+            text-align: left;
+            color: #191970;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+	    FONT-WEIGHT: BOLD;
+        }
+        .form-group .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056a3;
+            color: #191970;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+	    FONT-WEIGHT: BOLD;
+        }
+        .form-group .submit-btn:hover {
+            background-color: #004080;
+        }
+        .quote-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #191970;
+        }
+ 	 .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">POLYSTOX</div>
+        <div class="sub-header">Powered by: ACRON INTERNATIONAL PVT. LTD.</div>
+        <div class="section-title">:Freight Enquiry:</div>
+        
+
+	<div class="form-group">
+            <label>Date.</label>
+            <span>22-08-2024</span>
+        </div>
+
+        <div class="form-group">
+            <label>Order no.</label>
+            <span>enquiry</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Pick-up From</label>
+            <span>Mumbai</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Delivered To</label>
+            <span>Amrawati</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Quantity (MT)</label>
+            <span></span>
+        </div>
+        
+        <div class="form-group">
+            <label>Product</label>
+            <span>PVC Resin</span>
+        </div>
+
+      
+        <div class="terms">
+            <strong>Terms:</strong><br>
+		1.Best Quote.&nbsp;
+		2.Ready Truck.&nbsp;
+		3.No Part Load.<br>
+		4.No Haulting/Height Charges.<br>
+		5.Damage/Loss on Transporter.&nbsp;
+		6.Proper Material Covering.
+        </div>
+        
+        <div class="quote-title">Quote Freight (per ton)</div>
+       <div>
+	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
+		<Label for="Transporter" style="color:#00008B"> Transporter </label>
+		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px" required>
+
+		<Label for="Freight" style="color:#00008B"> Freight (per ton)</label>
+		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px" required>
+
+                <label for="Vehicle Type" style="color:#00008B"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
+                		<option value="" disabled selected>Select a Vehicle Type</option>
+
+                		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
+
+                		<option value="Closed Body 20 Ft. (Mxl)"> Closed Body 20 Ft. (Mxl) </option>
+
+                		<option value="Closed Body 24 Ft. (Sxl)"> Closed Body 24 Ft. (Sxl) </option>
+
+				<option value="Closed Body 24 Ft. (Mxl)"> Closed Body 24 Ft. (Mxl) </option>
+
+				<option value="Closed Body 32 Ft. (Sxl)"> Closed Body 32 Ft. (Sxl) </option>
+
+				<option value="Closed Body 32 Ft. (Mxl)"> Closed Body 32 Ft. (Mxl) </option>
+
+				<option value="Open Body 22 Ft. 10 Wheeler"> Open Body 22 Ft. 10 Wheeler </option>
+
+				<option value="Open Body 24 Ft. 12 Wheeler"> Open Body 24 Ft. 12 Wheeler </option>
+
+				<option value="Open Body 27 Ft. 14 Wheeler"> Open Body 27 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 32 Ft. 14 Wheeler"> Open Body 32 Ft. 14 Wheeler </option>
+
+				<option value="Open Body 40 Ft. 14 Wheeler"> Open Body 40 Ft. 14 Wheeler</option>
+
+				<option value="Open Body 14 Ft. Eicher"> Open Body 14 Ft. Eicher </option>
+ 
+				<option value="Open Body 17 Ft. Eicher"> Open Body 17 Ft. Eicher </option>
+
+                		<option value="Open Body 19 Ft. Eicher"> Open Body 19 Ft. Eicher </option>
+
+				<option value="addNew">Add new option...</option>
+            		</select>
+		<Label for="Min. Load Guarantee" style="color:#00008B; display:block;"> Min. Load Guarantee </label>
+		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
+
+<!-- Comment Box for "Others" Option -->
+   	  <div id="otherComment" class="form-group hidden">
+                <label for="Other Comment" style="color:#00008B">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+            </div>
+		<Label for="Verify Number" style="color:#00008B; display:block;">Verify Mobile Number</label>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+		
+ <!-- Hidden fields to send predefined data -->
+	    <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="Enquiry">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="Mumbai">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="Amravati">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="">
+            <input type="hidden" id="Product" name="Product" value="PVC Resin">
+		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
+
+    </div>
+
+ <script>
+   function checkForNewOption() {
+            var vehicleTypeSelect = document.getElementById('Vtype');
+            var selectedValue = vehicleTypeSelect.value;
+
+            if (selectedValue === 'addNew') {
+                var newOption = prompt("Enter new vehicle type:");
+                if (newOption) {
+                    var optionElement = document.createElement('option');
+                    optionElement.text = newOption;
+                    optionElement.value = newOption;
+                    vehicleTypeSelect.add(optionElement, vehicleTypeSelect.length - 2);
+                    vehicleTypeSelect.value = newOption;
+                }
+            }
+        }
+
+	function validateNumber() {
+            var number = document.getElementById("Vnumber").value;
+            if (number.length !== 10) {
+                alert("Please enter exactly 10 digits.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+	// Set current date in the format "dd-mm-yyyy"
+	document.addEventListener("DOMContentLoaded", function() {
+  	  var today = new Date();
+   	 var dd = String(today.getDate()).padStart(2, '0');
+   	 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+   	 var yyyy = today.getFullYear();
+
+  	  today = dd + '-' + mm + '-' + yyyy;
+  	  document.getElementById('currentDate').value = today;
+	});
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxyCSkYheAjviEigPp_fBUjjh9W7bn_GYsLyemulcEeRlnHm955du1iVBjyM2sgoGE/exec';
+        const form = document.forms['google-sheet'];
+
+       form.addEventListener('submit', e => {
+        if (!validateNumber()) {
+            e.preventDefault(); // Prevent form submission
+        } else {
+            e.preventDefault(); // Prevent the default form submission
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thank you"))
+                .catch(error => console.error('Error!', error.message));
+
+            form.reset();
+            // Reset the "Other Comment" field visibility if necessary
+        }
+    });
+    </script>
+
+</body>
+</html>
