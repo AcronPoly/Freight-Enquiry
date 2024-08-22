@@ -107,6 +107,37 @@
             display: none;
         }
 
+ /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                height: auto;
+            }
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 20px;
+            }
+            .sub-header {
+                font-size: 12px;
+            }
+            .section-title {
+                font-size: 16px;
+            }
+            .form-group label {
+                width: 100%;
+            }
+            .form-group span {
+                width: 100%;
+                font-size: small;
+            }
+	}
+	    
     </style>
 </head>
 <body>
