@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             
-            background-size: auto;
+            background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
@@ -18,7 +18,10 @@
         }
         .container {
             background-color: #ffffff;
-            background-image: url('https://img.freepik.com/free-vector/abstract-classic-blue-screensaver_23-2148421853.jpg?ga=GA1.1.726089188.1722603172&semt=ais_hybrid');
+            background-image: url('https://raw.githubusercontent.com/AcronPoly/Freight-Enquiry/main/BGIMAGE3.png');
+	    background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the background image */
+    	    background-repeat: no-repeat; /* Prevents the image from repeating */
 	    width: 350px;
             padding: 20px;
             border-radius: 10px;
@@ -26,18 +29,19 @@
             text-align: center;
         }
         .header {
-            color: #ffffff;
+            color: #191970;
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 5px;
         }
         .sub-header {
-            color: #ffffff;
+            color:#191970;
             font-size: 14px;
             margin-bottom: 20px;
+	    FONT-WEIGHT: BOLD;
         }
         .section-title {
-            color: #ffffff;
+            color: #191970;
             font-size: 18px;
             margin: 20px 0;
             font-weight: bold;
@@ -49,40 +53,46 @@
    	    margin-bottom: 15px;
    	    text-align: left;
    	    flex-wrap: wrap;
+	    FONT-WEIGHT: BOLD;
         }
         .form-group label {
-            color: #ffffff;
+            color: #191970;
     	    font-weight: bold;
     	    width: 40%;
+	    FONT-WEIGHT: BOLD;
         }
         .form-group label::after {
             content: ":";
             margin-left: 5px;
+	    FONT-WEIGHT: BOLD;
         }
         .form-group span {
-            color: #ffffff;
+            color: #191970;
    	    width: 60%; /* Set width for span */
    	    display: block; /* Ensures the span starts on a new line */
   	    word-wrap: break-word;
 	    font-size: small;
     	    font-family: inherit;
+            FONT-WEIGHT: BOLD;
         }
         .terms {
             text-align: left;
-            color: #ffffff;
+            color: #191970;
             font-size: 14px;
             margin-top: 20px;
             margin-bottom: 20px;
+	    FONT-WEIGHT: BOLD;
         }
         .form-group .submit-btn {
             width: 100%;
             padding: 10px;
             background-color: #0056a3;
-            color: #ffffff;
+            color: #191970;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+	    FONT-WEIGHT: BOLD;
         }
         .form-group .submit-btn:hover {
             background-color: #004080;
@@ -91,7 +101,7 @@
             font-size: 16px;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #ffffff;
+            color: #191970;
         }
  	 .hidden {
             display: none;
@@ -101,34 +111,44 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">Polystox</div>
-        <div class="sub-header">Redefining Polymers</div>
+        <div class="header">POLYSTOX</div>
+        <div class="sub-header">Powered by: ACRON INTERNATIONAL PVT. LTD.</div>
         <div class="section-title">:Freight Enquiry:</div>
         
 
 	<div class="form-group">
             <label>Date.</label>
-            <span>13-08-2024</span>
+            <span>03-09-2024</span>
         </div>
 
         <div class="form-group">
             <label>Order no.</label>
-            <span>42482</span>
+            <span>Enquiry2</span>
         </div>
         
         <div class="form-group">
             <label>Pick-up From</label>
-            <span>Indore, 452001</span>
+            <span>Mundra</span>
+        </div>
+
+	<div class="form-group">
+            <label>Pincode (Pick-up From)</label>
+            <span></span>
         </div>
         
         <div class="form-group">
             <label>Delivered To</label>
-            <span>Indore, 452015</span>
+            <span>Rajkot</span>
+        </div>
+
+	<div class="form-group">
+            <label>Pincode (Delivered To)</label>
+            <span>360003</span>
         </div>
         
         <div class="form-group">
             <label>Quantity (MT)</label>
-            <span>30 MT</span>
+            <span>25 MT</span>
         </div>
         
         <div class="form-group">
@@ -141,23 +161,22 @@
             <strong>Terms:</strong><br>
 		1.Best Quote.&nbsp;
 		2.Ready Truck.&nbsp;
-		3.No Part Load.<br>
-		4.No Haulting/Height Charges.<br>
-		5.Damage/Loss on Transporter.&nbsp;
-		6.Proper Material Covering.
+		3.No Haulting/Height Charges.<br>
+		4.Damage/Loss on Transporter.&nbsp;
+		5.Proper Material Covering.
         </div>
         
         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
 	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
-		<Label for="Transporter" style="color:white"> Transporter </label>
-		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px" required>
+		<Label for="Transporter" style="color:#00008B; display:block;"> Transporter </label>
+		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px; border-width: thin;" required>
 
-		<Label for="Freight" style="color:white"> Freight (per ton)</label>
-		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px" required>
+		<Label for="Freight" style="color:#00008B; display:block;"> Freight (per ton)</label>
+		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px; border-width: thin;" required>
 
-                <label for="Vehicle Type" style="color:white"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
+                <label for="Vehicle Type" style="color:#00008B; display:block;"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; border-width: thin;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
                 		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
@@ -190,25 +209,28 @@
 
 				<option value="addNew">Add new option...</option>
             		</select>
-		<Label for="Min. Load Guarantee" style="color:white; display:block;"> Min. Load Guarantee </label>
-		<input type="text" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
+		<Label for="Min. Load Guarantee" style="color:#00008B; display:block;"> Min. Load Guarantee </label>
+		<input type="number" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; border-width: thin; margin-bottom:6px;" required>
 
 <!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
-                <label for="Other Comment" style="color:white">Other Comment</label>
-                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+                <label for="Other Comment" style="color:#00008B; display:block;">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px; border-width: thin;">
             </div>
-		<Label for="Verify Number" style="color:white; display:block;">Verify Mobile Number</label>
-                <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+		<Label for="Verify Number" style="color:#00008B; display:block;">Verify Mobile Number</label>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; border-width: thin; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
 		
  <!-- Hidden fields to send predefined data -->
-	    <input type="hidden" id="currentDate" name="currentDate">
-            <input type="hidden" id="Ordername" name="Order no" value="42481">
-            <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore, 452001">
-            <input type="hidden" id="Delivered To" name="Delivered To" value="Indore, 452015">
-            <input type="hidden" id="Quantity" name="Quantity MT" value="30 MT">
+	   <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="Enquiry2">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="Mundra">
+	    <input type="hidden" id="Pincode (Pick-up From)" name="Pincode (Pick-up From)" value="">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="Rajkot">
+	    <input type="hidden" id="Pincode (Delivered To)" name="Pincode (Delivered To)" value="360003">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="25">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
-		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
+		
+		<input type="Submit" style="width:120px; height:25px; border-radius: 8px; value="Submit" name="Submit">
 
     </div>
 
@@ -248,7 +270,7 @@
   	  today = dd + '-' + mm + '-' + yyyy;
   	  document.getElementById('currentDate').value = today;
 	});
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxyCSkYheAjviEigPp_fBUjjh9W7bn_GYsLyemulcEeRlnHm955du1iVBjyM2sgoGE/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVMbQKbDACOy8whrT0Fam-MT-VMJCHnKFDagxGZxCj5MK69TYTtZA-R-8bTzu_dZXFZw/exec';
         const form = document.forms['google-sheet'];
 
        form.addEventListener('submit', e => {
