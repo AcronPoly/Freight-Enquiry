@@ -7,26 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            /*background-image: url('https://raw.githubusercontent.com/AcronPoly/Freight-Enquiry/main/BGIMAGE4.png');
+            
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;*/
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-        
         }
         .container {
             background-color: #ffffff;
-            
-	    background-image: url('https://raw.githubusercontent.com/AcronPoly/Freight-Enquiry/main/BGIMAGE5.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-image: url('https://raw.githubusercontent.com/AcronPoly/Freight-Enquiry/main/BGIMAGE3.png');
+	    background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the background image */
+    	    background-repeat: no-repeat; /* Prevents the image from repeating */
 	    width: 350px;
             padding: 20px;
             border-radius: 10px;
@@ -112,37 +107,6 @@
             display: none;
         }
 
- /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
-            body {
-                background-size: cover;
-                height: auto;
-            }
-            .container {
-                width: 90%;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                font-size: 20px;
-            }
-            .sub-header {
-                font-size: 12px;
-            }
-            .section-title {
-                font-size: 16px;
-            }
-            .form-group label {
-                width: 100%;
-            }
-            .form-group span {
-                width: 100%;
-                font-size: small;
-            }
-	}
-	    
     </style>
 </head>
 <body>
@@ -154,12 +118,12 @@
 
 	<div class="form-group">
             <label>Date.</label>
-            <span>13-08-2024</span>
+            <span>03-09-2024</span>
         </div>
 
         <div class="form-group">
             <label>Order no.</label>
-            <span>42482</span>
+            <span>Enquiry1</span>
         </div>
         
         <div class="form-group">
@@ -181,7 +145,7 @@
             <label>Pincode (Delivered To)</label>
             <span>452001</span>
         </div>
-	    
+        
         <div class="form-group">
             <label>Quantity (MT)</label>
             <span>30 MT</span>
@@ -206,14 +170,14 @@
         <div class="quote-title">Quote Freight (per ton)</div>
        <div>
 	<form method="POST" name="google-sheet" onsubmit="return validateNumber()">
-		<Label for="Transporter" style="color:#00008B"> Transporter </label>
-		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px" required>
+		<Label for="Transporter" style="color:#00008B; display:block;"> Transporter </label>
+		<input type="text" id="Tname" name="Transporter" placeholder="Enter Transporter Name" style="width:288px; border-width: thin;" required>
 
-		<Label for="Freight" style="color:#00008B"> Freight (per ton)</label>
-		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px" required>
+		<Label for="Freight" style="color:#00008B; display:block;"> Freight (per ton)</label>
+		<input type="text" id="freight" name="Freight" placeholder="Enter freight amount" style="width:288px; border-width: thin;" required>
 
-                <label for="Vehicle Type" style="color:#00008B"> Vehicle Type </label>
-            		<select id="Vtype" name="Vehicle Type" style="width: 298px;" onchange="checkForNewOption()" required>
+                <label for="Vehicle Type" style="color:#00008B; display:block;"> Vehicle Type </label>
+            		<select id="Vtype" name="Vehicle Type" style="width: 298px; border-width: thin;" onchange="checkForNewOption()" required>
                 		<option value="" disabled selected>Select a Vehicle Type</option>
 
                 		<option value="Closed Body 20 Ft. (Sxl)"> Closed Body 20 Ft. (Sxl) </option>
@@ -247,19 +211,19 @@
 				<option value="addNew">Add new option...</option>
             		</select>
 		<Label for="Min. Load Guarantee" style="color:#00008B; display:block;"> Min. Load Guarantee </label>
-		<input type="number" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; margin-bottom:6px;" required>
+		<input type="number" id="MLoad" name="Min. Load Guarantee" placeholder="Enter Min. Load Guarantee of Vehicle" style="width:288px; border-width: thin; margin-bottom:6px;" required>
 
 <!-- Comment Box for "Others" Option -->
    	  <div id="otherComment" class="form-group hidden">
-                <label for="Other Comment" style="color:#00008B">Other Comment</label>
-                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px;">
+                <label for="Other Comment" style="color:#00008B; display:block;">Other Comment</label>
+                <input type="text" id="otherCommentInput" name="Other Comment" placeholder="Enter your comment" style="width:288px; border-width: thin;">
             </div>
 		<Label for="Verify Number" style="color:#00008B; display:block;">Verify Mobile Number</label>
-                <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
+                <input type="number" id="Vnumber" name="Verify Number" placeholder="Enter contact number" style="width:288px; border-width: thin; margin-bottom:6px" required pattern="\d{10}" maxlength="10" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"; required>
 		
  <!-- Hidden fields to send predefined data -->
-	    <input type="hidden" id="currentDate" name="currentDate">
-            <input type="hidden" id="Ordername" name="Order no" value="Enquiry">
+	   <input type="hidden" id="currentDate" name="currentDate">
+            <input type="hidden" id="Ordername" name="Order no" value="Enquiry1">
             <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore">
 	    <input type="hidden" id="Pincode (Pick-up From)" name="Pincode (Pick-up From)" value="452001">
             <input type="hidden" id="Delivered To" name="Delivered To" value="Indore">
@@ -267,7 +231,7 @@
             <input type="hidden" id="Quantity" name="Quantity MT" value="30">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
 		
-		<input type="Submit" style="width:120px; height:20px value="Submit" name="Submit">
+		<input type="Submit" style="width:120px; height:25px; border-radius: 8px; value="Submit" name="Submit">
 
     </div>
 
@@ -307,7 +271,7 @@
   	  today = dd + '-' + mm + '-' + yyyy;
   	  document.getElementById('currentDate').value = today;
 	});
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyChI701TFjGemPxKdivhZWk_zMNLOvBEycVdXD6HfjPLDbAeAK5vCCZpJ2_Fo930PHXw/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVMbQKbDACOy8whrT0Fam-MT-VMJCHnKFDagxGZxCj5MK69TYTtZA-R-8bTzu_dZXFZw/exec';
         const form = document.forms['google-sheet'];
 
        form.addEventListener('submit', e => {
