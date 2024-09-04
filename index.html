@@ -118,37 +118,37 @@
 
 	<div class="form-group">
             <label>Date.</label>
-            <span>13-08-2024</span>
+            <span>03-09-2024</span>
         </div>
 
         <div class="form-group">
             <label>Order no.</label>
-            <span>Enquiry</span>
+            <span>Enquiry2</span>
         </div>
         
         <div class="form-group">
             <label>Pick-up From</label>
-            <span>Indore</span>
+            <span>Mundra</span>
         </div>
 
 	<div class="form-group">
             <label>Pincode (Pick-up From)</label>
-            <span>452001</span>
+            <span></span>
         </div>
         
         <div class="form-group">
             <label>Delivered To</label>
-            <span>Indore</span>
+            <span>Rajkot</span>
         </div>
 
 	<div class="form-group">
             <label>Pincode (Delivered To)</label>
-            <span>452001</span>
+            <span>360003</span>
         </div>
         
         <div class="form-group">
             <label>Quantity (MT)</label>
-            <span>30 MT</span>
+            <span>25 MT</span>
         </div>
         
         <div class="form-group">
@@ -161,10 +161,9 @@
             <strong>Terms:</strong><br>
 		1.Best Quote.&nbsp;
 		2.Ready Truck.&nbsp;
-		3.No Part Load.<br>
-		4.No Haulting/Height Charges.<br>
-		5.Damage/Loss on Transporter.&nbsp;
-		6.Proper Material Covering.
+		3.No Haulting/Height Charges.<br>
+		4.Damage/Loss on Transporter.&nbsp;
+		5.Proper Material Covering.
         </div>
         
         <div class="quote-title">Quote Freight (per ton)</div>
@@ -223,12 +222,12 @@
 		
  <!-- Hidden fields to send predefined data -->
 	   <input type="hidden" id="currentDate" name="currentDate">
-            <input type="hidden" id="Ordername" name="Order no" value="Enquiry">
-            <input type="hidden" id="Pick up Form" name="Pick up From" value="Indore">
-	    <input type="hidden" id="Pincode (Pick-up From)" name="Pincode (Pick-up From)" value="452001">
-            <input type="hidden" id="Delivered To" name="Delivered To" value="Indore">
-	    <input type="hidden" id="Pincode (Delivered To)" name="Pincode (Delivered To)" value="452001">
-            <input type="hidden" id="Quantity" name="Quantity MT" value="30">
+            <input type="hidden" id="Ordername" name="Order no" value="Enquiry2">
+            <input type="hidden" id="Pick up Form" name="Pick up From" value="Mundra">
+	    <input type="hidden" id="Pincode (Pick-up From)" name="Pincode (Pick-up From)" value="">
+            <input type="hidden" id="Delivered To" name="Delivered To" value="Rajkot">
+	    <input type="hidden" id="Pincode (Delivered To)" name="Pincode (Delivered To)" value="360003">
+            <input type="hidden" id="Quantity" name="Quantity MT" value="25">
             <input type="hidden" id="Product" name="Product" value="PVC Resin">
 		
 		<input type="Submit" style="width:120px; height:25px; border-radius: 8px; value="Submit" name="Submit">
@@ -271,7 +270,7 @@
   	  today = dd + '-' + mm + '-' + yyyy;
   	  document.getElementById('currentDate').value = today;
 	});
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzeJLd5TUfJFrf_Oxt36lWk_yIqL3O43E2SLqrXdFspyPL7JSurK-sFeeuss_zL2aCadg/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzrz39_tWFJSE009sOTQ6jbhZJwUJgt_emzaV05L2x0uCsnOhMhx7kw7Di0-la_3wqv7w/exec';
         const form = document.forms['google-sheet'];
 
        form.addEventListener('submit', e => {
